@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>duo_lashes — Ресницы и брови</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --main-bg: #fff7f9;
+            --accent: #f8d3e5;
+            --primary: #eeb7c2;
+            --text: #3d2c2e;
+            --button: #eeb7c2;
+            --button-hover: #f8d3e5;
+            --border-radius: 18px;
+            --shadow: 0 4px 24px rgba(238,183,194,0.12);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: var(--main-bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+        header {
+            background: var(--accent);
+            padding: 24px 0 12px 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            animation: fadeIn 1s;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--text);
+        }
+        main {
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 32px 16px 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+        .fade-in:nth-child(1) { animation-delay: 0.2s; }
+        .fade-in:nth-child(2) { animation-delay: 0.4s; }
+        .fade-in:nth-child(3) { animation-delay: 0.6s; }
+        .fade-in:nth-child(4) { animation-delay: 0.8s; }
+        .fade-in:nth-child(5) { animation-delay: 1s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            text-align: center;
+            color: #a87b8a;
+            margin-bottom: 0;
+        }
+        section {
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 28px 20px;
+            margin-bottom: 0;
+        }
+        section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 18px;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+        }
+        .services-list li {
+            font-size: 1.08rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text);
+        }
+        .services-list i {
+            color: var(--primary);
+            font-size: 1.1em;
+        }
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            font-size: 1.05rem;
+        }
+        .contacts i {
+            color: var(--primary);
+            margin-right: 8px;
+            min-width: 18px;
+            text-align: center;
+        }
+        .wa-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--button);
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 30px;
+            padding: 16px 0;
+            margin: 32px auto 0 auto;
+            width: 100%;
+            max-width: 340px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            animation: fadeIn 1.2s;
+        }
+        .wa-btn:hover, .wa-btn:focus {
+            background: var(--button-hover);
+            color: var(--text);
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 600px) {
+            main {
+                padding-top: 18px;
+                gap: 24px;
+            }
+            section {
+                padding: 18px 8px;
+            }
+            .hero-title {
+                font-size: 1.3rem;
+            }
+            .wa-btn {
+                font-size: 1rem;
+                padding: 13px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>duo_lashes</h1>
+    </header>
+    <main>
+        <div class="fade-in">
+            <div class="hero-title">2 процедуры — 1 идеальный образ ✨</div>
+            <div class="hero-subtitle">Реснички + брови: подкручено, уложено, ухожено</div>
+        </div>
+        <section id="services" class="fade-in">
+            <h2><i class="fa-solid fa-star"></i> Услуги</h2>
+            <ul class="services-list">
+                <li><i class="fa-solid fa-eye"></i> Наращивание ресниц</li>
+                <li><i class="fa-solid fa-wand-magic-sparkles"></i> Ламинирование ресниц</li>
+                <li><i class="fa-solid fa-wand-magic"></i> Ламинирование бровей</li>
+                <li><i class="fa-solid fa-paint-brush"></i> Коррекция и окрашивание бровей</li>
+                <li><i class="fa-solid fa-heart"></i> Мусульманская коррекция</li>
+            </ul>
+        </section>
+        <section id="contacts" class="fade-in">
+            <h2><i class="fa-solid fa-phone"></i> Контакты</h2>
+            <div class="contacts">
+                <div><i class="fa-solid fa-location-dot"></i> ТЦ "Beta Stores 1", ул. Чуй, 150А, 5 этаж, кабинет 513</div>
+                <div><i class="fa-brands fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/996703337778" style="color:inherit;text-decoration:underline;">0703337778</a></div>
+            </div>
+        </section>
+        <a class="wa-btn fade-in" href="https://wa.me/996703337778" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i> Записаться в WhatsApp
+        </a>
+    </main>
+    <script>
+        // Fade-in on scroll
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
